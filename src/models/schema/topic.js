@@ -27,11 +27,6 @@ module.exports = (db, type) => {
 
   topic.associate = (models) => {
 
-    topic.belongsTo(models.Roadmap, {
-      foreignKey: "roadmapId",
-      as: "roadmap"
-    });
-
     topic.hasMany(models.Resource, {
       foreignKey: "topicId",
       as: "resource"
@@ -40,7 +35,12 @@ module.exports = (db, type) => {
     topic.hasOne(models.Quiz, {
       foreignKey: "topicId",
       as: "quiz"
-    })
+    });
+
+    topic.belongsTo(models.Roadmap, {
+      foreignKey: "roadmapId",
+      as: "roadmap"
+    });
   }
   return topic;
 };

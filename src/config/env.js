@@ -8,7 +8,7 @@ module.exports = {
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     host: process.env.DB_HOST,
-    dialect: process.env.DB_DAILECT,
+    dialect: process.env.DB_DIALECT,
 
     emailApp: process.env.EMAIL_APP,
     passApp: process.env.PASSWORD_APP,

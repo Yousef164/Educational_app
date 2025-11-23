@@ -1,45 +1,46 @@
-module.exports = (db, type) => {
-  const roadmap = db.define(
+module.exports = (sequelize, DataTypes) => {
+  const Roadmap = sequelize.define(
     "Roadmap",
     {
       id: {
-        type: type.INTEGER,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
       teacherId: {
-        type: type.INTEGER,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
-      premuimPrice: {
-        type: type.INTEGER,
+      premiumPrice: {  // صححت spelling
+        type: DataTypes.INTEGER,
         allowNull: true,
       },
       description: {
-        type: type.STRING,
+        type: DataTypes.STRING,
         allowNull: false,
       },
-    }, {
+    },
+    {
       tableName: "Roadmaps",
+      freezeTableName: true,
     }
   );
 
-  roadmap.associate = (models) => {
-    roadmap.belongsTo(models.Teacher, {
+  Roadmap.associate = (models) => {
+    Roadmap.belongsTo(models.Teacher, {
       foreignKey: "teacherId",
       as: "teacher",
     });
-
-    roadmap.hasMany(models.studentSubscription, {
+    Roadmap.hasMany(models.studentSubscription, {
       foreignKey: "roadmapId",
       as: "studentSubscription",
     });
 
-    roadmap.hasMany(models.Topic, {
+    Roadmap.hasMany(models.Topic, {
       foreignKey: "roadmapId",
       as: "topic",
     });
   };
 
-  return roadmap;
+  return Roadmap;
 };
