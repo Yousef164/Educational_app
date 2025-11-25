@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "test": "SET \"NODE_ENV=testing\" && jest"
   },
   "author": "Yousef Salah",
   "license": "ISC",
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "dotenv": "^17.2.3",
+    "jest": "^30.2.0",
     "nodemon": "^3.1.10"
   }
 }

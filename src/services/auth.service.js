@@ -18,7 +18,7 @@ class AuthService {
       if(user.emailVerified === false) {
         throwErr("Please verify your email to login");
       }
-      const same = bcrypt.compare(password, user.password);
+      const same = await bcrypt.compare(password, user.password);
       if (!same) {
         throwErr("The password is incorrect");
       }
