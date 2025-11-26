@@ -92,4 +92,5 @@ describe("AuthService.createUser", () => {
     );
     expect(response).toBe("Check your email to verify your account.");
   });
+  
 });
