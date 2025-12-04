@@ -8,6 +8,7 @@ const typeDefs = require("./src/typeDefs");
 const resolvers = require("./src/resolvers");
 const verifyToken = require("./src/middleware/verifyToken")
 const verifyEmail = require("./src/routes/verifyEmail.route.js")
+const paymentRoute = require("./src/routes/paymant.route");
 
 
 app.use(express.json());
@@ -28,6 +29,7 @@ app.use(express.json());
 
 
   app.use('/verify-email', verifyEmail);
+  app.use('/payment', paymentRoute);
 
   app.listen(port, () => {
     console.log(

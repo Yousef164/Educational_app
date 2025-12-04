@@ -20,6 +20,10 @@ module.exports = (db, type) => {
       allowNull: false,
       defaultValue: false,
     },
+    expiresAt: {
+      type: type.DATE,
+      allowNull: false
+    }
   }, {
     tableName: "StudentSubscrebtions"
   });

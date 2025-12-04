@@ -16,9 +16,16 @@ function isStudent(user) {
   checkRole(user, ["student"]);
 }
 
+function addDays(date, days) {
+  const result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
+}
+
 module.exports = {
   throwErr,
   isTeacher,
   isStudent,
-  checkRole
+  checkRole,
+  addDays
 };

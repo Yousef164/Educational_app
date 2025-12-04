@@ -14,5 +14,11 @@ module.exports = {
     passApp: process.env.PASSWORD_APP,
     urlApp: process.env.URL_APP,
 
+    paymobBase: process.env.PAYMOB_BASE,
+    apiKey: process.env.API_KEY,
+    integrationId: process.env.INTEGRATION_ID,
+    iframeId: process.env.IFRAME_ID,
+    paymobHmac: process.env.PAYMOB_HMAC,
+
     jwtSecret: process.env.JWT_SECRET
 }

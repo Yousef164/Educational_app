@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      premiumPrice: {  // صححت spelling
+      premiumPrice: { 
         type: DataTypes.INTEGER,
         allowNull: true,
       },
