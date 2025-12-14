@@ -12,17 +12,17 @@ const {
 } = require("../middleware/paymentGateway");
 
 router.post("/create", async (req, res) => {
-  const auth = req.headers.authorization || "";
-  const user = verifyToken(auth);
-  if (isStudent(user)) {
-    return res
-      .status(403)
-      .json({ error: "Students are not allowed to make payments" });
-  }
-
-  const { amountCents, merchant_order_id, billingData } = req.body;
-
   try {
+    const auth = req.headers.authorization || "";
+    const user = verifyToken(auth);
+    if (isStudent(user)) {
+      return res
+        .status(403)
+        .json({ error: "Students are not allowed to make payments" });
+    }
+
+    const { amountCents, merchant_order_id, billingData } = req.body;
+
     if (!amountCents || !merchant_order_id) {
       return res.status(400).json({ error: "Missing required fields" });
     }

@@ -17,6 +17,7 @@ module.exports = gql`
     id: ID!
     title: String!
     description: String
+    premuimPrice: Int
     topics: [Topic!]
   }
 

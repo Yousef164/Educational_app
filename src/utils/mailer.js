@@ -11,7 +11,7 @@ const transporter = nodemailer.createTransport({
 });
 
 async function sendVerificationEmail(userEmail, username, token) {
-  const link = `${urlApp}/verify-email?token=${token}`; // ✅ اللينك الصحيح
+  const link = `${urlApp}/verify-email?token=${token}`;
 
   const mailOptions = {
     from: emailApp,

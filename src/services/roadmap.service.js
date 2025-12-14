@@ -5,7 +5,6 @@ class roadmapService {
   static async createRoadmap(user, title, description, premuimPrice) {
     try {
       isTeacher(user);
-      console.log(user);
       const teacher = await db.Teacher.findOne({
         where: { userId: user.userId },
       });

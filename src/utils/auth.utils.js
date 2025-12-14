@@ -24,6 +24,7 @@ const insertTeacherOrStudent = async (id, role, level, subject) => {
         userId: id,
       });
     }
+    else throw new Error("The role is incorrect");
   } catch (err) {
     console.log(err)
   }
