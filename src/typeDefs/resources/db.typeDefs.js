@@ -18,7 +18,7 @@ module.exports = gql`
     title: String!
     description: String
     premuimPrice: Int
-    topics: [Topic!]
+    topics: [Topic]
   }
 
   type Topic {
@@ -26,7 +26,7 @@ module.exports = gql`
     title: String!
     description: String
     roadmap: Roadmap
-    resource: [Resource!]
+    resource: [Resource]
     quiz: Quiz
   }
 
@@ -42,7 +42,7 @@ module.exports = gql`
     id: ID!
     title: String!
     topic: Topic
-    question: [Question!]
+    question: [Question]
     mark: Int!
   }
 
@@ -51,7 +51,7 @@ module.exports = gql`
     questionText: String!
     mark: Int!
     quiz: Quiz
-    options: [Option!]!
+    options: [Option]
   }
 
   type Option {

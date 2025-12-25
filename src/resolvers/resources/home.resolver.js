@@ -19,6 +19,9 @@ module.exports = {
   Mutation: {
     createRoadmap: async (parent, args, { user }) => {
       const { title, description, premuimPrice } = args;
+      if(!title || !description){
+        throw new Error("Title and Description are required");
+      }
       return await roadmapService.createRoadmap(
         user,
         title,

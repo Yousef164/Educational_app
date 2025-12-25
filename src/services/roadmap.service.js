@@ -8,13 +8,16 @@ class roadmapService {
       const teacher = await db.Teacher.findOne({
         where: { userId: user.userId },
       });
+      if(!teacher){
+        throwErr("Teacher profile not found");
+      }
       const roadmap = await db.Roadmap.create({
         teacherId: teacher.id,
         title,
         premuimPrice,
         description,
       });
-      await roadmap.save();
+      console.log(roadmap);
       return roadmap;
     } catch (error) {
       throwErr(error);
